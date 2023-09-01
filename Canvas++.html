@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<title>Canvas++</title>
+
+<!-- CANVAS++.html -->
+<!-- Wecome to our chrome extensions's main html page.
+
+NOTES FOR DEVELOPERS:
+1. Don't use any inline javascript functions on this .html file, they will throw errors in
+the chrome extension and it will not function properly. Use ids in this .html file and then reference 
+them in a .js file whenever you want to do something with javascript. -->
+
+<!-- CSS Styles -->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Canvas++.css"/>
+</head>
+
+<body>
+
+    <!-- Popup Window -->
+    <div id="pop-up" class="pop-up">
+
+        <!-- Title -->
+        <h2>Canvas++</h2>
+
+        <!-- Tabs -->
+        <div id="assignments-tab-btn" class="tab">
+            <h3>Assignments</h3>
+        </div>
+
+        <div id="notifications-tab-btn" class="tab" >
+            <h3>Notifications</h3>
+        </div>
+
+        <div id="grade-calc-tab-btn" class="tab">
+            <h3>Grade Calc</h3>
+        </div>
+
+        <div id="access-token-tab-btn" class="tab">
+            <h3>Access Token</h3>
+        </div>
+
+        <!-- Assignment Display -->
+        <div id="tab1" class="display">
+            <p>Assignment display.</p>
+            <!-- <form>
+                <label for="canvas-token">Paste your Canvas Access Token here:</label><br>
+                <input type="text" id="canvas-token" name="canvas-token"><br>
+                <input id="submit-token" type="button" value="Submit"></form>
+            </form> -->
+            <p> After you have submitted your access token, <br>you can test a Canvas API call here:</p>
+            <button id="assignments-button">Show Assignments</button>
+            <div class="test-api-output-box">
+                <p id="test-assignments-output">This text box will show the response from the API</p>
+            </div>
+        </div>
+
+        <!-- Notification Display -->
+        <div id="tab2" class="display" style="display: none">
+            <p>Notification display.</p>
+
+            <!-- Email Toggle -->
+            <label id="email-label">Send emails: </label>
+            <select id="email-toggle">
+                <option value="true">Yes</option>
+                <option value="false" selected>No</option>
+            </select>
+            <!--Notifications Button and Test box-->
+            <p> After you have submitted your access token, <br>you can test a Canvas API call here:</p>
+            <button id="notifications-button">Show Notifications</button>
+            <div class="test-api-output-box">
+                <p id="test-notifications-output">This text box will show the response from the API</p>
+            </div>
+        </div>
+
+        <!-- Grade Calculator -->
+        <div id="tab3" class="display" style="display: none">
+            <p>Grade calculator.</p>
+        </div>
+
+        <!-- Access Token Login -->
+        <div id="tab4" class="display" style="display: none">
+            <p>Log in with your Canvas Access Token.</p>
+            <form>
+                <label for="canvas-token">Paste your Canvas Access Token here:</label><br>
+                <input type="text" id="canvas-token" name="canvas-token"><br>
+                <input id="submit-token" type="button" value="Submit"></form>
+            </form>
+            <p> After you have submitted your access token, <br>you can test a Canvas API call here:</p>
+            <button id="login-button">Login</button>
+            <div class="test-api-output-box">
+                <p id="test-api-output">This text box will show the response from the API</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript -->
+    <script type="module" src="Canvas++.js"></script>
+</body>
+
+</html>
